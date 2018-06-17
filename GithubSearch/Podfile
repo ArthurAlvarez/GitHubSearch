@@ -6,5 +6,6 @@ target 'GithubSearch' do
   use_frameworks!
 
   # Pods for GithubSearch
+  pod 'Moya', '~> 11.0'
 
 end
