@@ -105,6 +105,7 @@
 		1413EC6120D71E9400C9FCA9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				14F8B95B20D869C10054DF36 /* Components */,
 				1444EFCB20D72CDA00DC919E /* Utilities */,
 				1444EFC520D7283F00DC919E /* Models */,
 				1413EC6520D7201600C9FCA9 /* API */,
@@ -273,6 +274,21 @@
 				1444EFE520D7456F00DC919E /* GithubRepoTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		14F8B95B20D869C10054DF36 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				14F8B95C20D869D00054DF36 /* EmpyStateView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		14F8B95C20D869D00054DF36 /* EmpyStateView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EmpyStateView;
 			sourceTree = "<group>";
 		};
 		2BBEF339B9882273CF91E0F8 /* Pods */ = {

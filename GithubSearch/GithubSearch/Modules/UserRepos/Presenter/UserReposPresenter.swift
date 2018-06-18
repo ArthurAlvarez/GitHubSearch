@@ -28,6 +28,7 @@ class UserReposPresenter: NSObject {
 
     func viewDidLoad() {
         view.setTableView()
+        view.hideTableView()
         fetchRepos()
     }
 
@@ -38,7 +39,12 @@ class UserReposPresenter: NSObject {
         repository.fetchRepos(for: username) { success in
             self.view.hideLoading()
             if success {
-                self.view.reloadData()
+                if self.repository.numberOfRepos() > 0 {
+                    self.view.reloadData()
+                    self.view.hideEmptyState()
+                } else {
+                    self.view.showEmptyState()
+                }
             } else {
                 self.view.showConnectionErrorBanner()
             }

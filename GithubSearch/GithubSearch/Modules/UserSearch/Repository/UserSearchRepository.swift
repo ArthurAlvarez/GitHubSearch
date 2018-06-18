@@ -23,7 +23,7 @@ final class UserSearchRepository {
             case .success(let response):
                 if let responseWrapper = (try? JSONDecoder().decode(GithubUserResponseWrapper.self,
                                                                     from: response.data)) {
-                    self.users = responseWrapper.items
+                    self.users = responseWrapper.items ?? []
                     onComplete(true)
                 } else {
                     onComplete(false)

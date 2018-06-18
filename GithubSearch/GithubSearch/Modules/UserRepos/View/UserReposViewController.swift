@@ -12,7 +12,8 @@ final class UserReposViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var emptyStateLabel: UILabel!
+    
     // MARK: - Properties
 
     private var presenter: UserReposPresenter!
@@ -38,6 +39,28 @@ final class UserReposViewController: UIViewController {
 
     func reloadData() {
         tableView.reloadData()
+    }
+
+    func hideTableView() {
+        UIView.animate(withDuration: 0.25) {
+            self.tableView.alpha = 0
+        }
+    }
+
+    func showTableView() {
+        UIView.animate(withDuration: 0.25) {
+            self.tableView.alpha = 1.0
+        }
+    }
+
+    func showEmptyState() {
+        hideTableView()
+        emptyStateLabel.isHidden = false
+    }
+
+    func hideEmptyState() {
+        showTableView()
+        emptyStateLabel.isHidden = true
     }
 }
 

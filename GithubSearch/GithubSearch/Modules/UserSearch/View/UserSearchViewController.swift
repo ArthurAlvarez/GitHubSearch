@@ -13,6 +13,7 @@ final class UserSearchViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak private var searchBar: UISearchBar!
     @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak var emptyStateLabel: UILabel!
 
     // MARK: - Properties
 
@@ -39,11 +40,34 @@ final class UserSearchViewController: UIViewController {
     }
 
     func setSearchBar() {
+        searchBar.placeholder = "Search users"
         searchBar.delegate = self
     }
 
     func reloadData() {
         tableView.reloadData()
+    }
+
+    func showTableView() {
+        UIView.animate(withDuration: 0.25) {
+            self.tableView.alpha = 1.0
+        }
+    }
+
+    func hideTableView() {
+        UIView.animate(withDuration: 0.25) {
+            self.tableView.alpha = 0
+        }
+    }
+
+    func showEmptyState() {
+        hideTableView()
+        emptyStateLabel.isHidden = false
+    }
+
+    func hideEmptyState() {
+        showTableView()
+        emptyStateLabel.isHidden = true
     }
 }
 

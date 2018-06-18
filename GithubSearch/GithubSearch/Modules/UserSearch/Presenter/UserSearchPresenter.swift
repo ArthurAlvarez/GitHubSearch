@@ -24,6 +24,8 @@ final class UserSearchPresenter: NSObject {
     func viewDidLoad() {
         view.setTableView()
         view.setSearchBar()
+        view.hideTableView()
+        view.showEmptyState()
     }
 
     // MARK: - DataSource
@@ -46,7 +48,12 @@ final class UserSearchPresenter: NSObject {
         repository.fetchUsers(query: query) { success in
             self.view.hideLoading()
             if success {
-                self.view.reloadData()
+                if self.repository.usersCount() > 0 {
+                    self.view.reloadData()
+                    self.view.hideEmptyState()
+                } else {
+                    self.view.showEmptyState()
+                }
             } else {
                 self.view.showConnectionErrorBanner()
             }
