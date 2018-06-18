@@ -9,7 +9,13 @@
 import Foundation
 import Moya
 
-final class UserReposRepository: NSObject {
+protocol UserReposRepositoryProtocol {
+    func fetchRepos(for username: String, onComplete: @escaping (Bool) -> Void)
+    func numberOfRepos() -> Int
+    func getRepo(at index: Int) -> GithubRepo
+}
+
+final class UserReposRepository: UserReposRepositoryProtocol {
 
     // MARK: - Properties
     private var provider = MoyaProvider<GithubAPI>()
@@ -22,7 +28,7 @@ final class UserReposRepository: NSObject {
             switch result {
             case .success(let response):
                 if let responseWrapper = try? JSONDecoder().decode(GithubRepoResponseWrapper.self, from: response.data) {
-                    self.repos = responseWrapper.items
+                    self.repos = responseWrapper.items ?? []
                     onComplete(true)
                 } else {
                     onComplete(false)

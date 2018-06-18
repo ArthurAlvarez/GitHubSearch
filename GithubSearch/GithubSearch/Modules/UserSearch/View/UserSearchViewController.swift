@@ -23,13 +23,12 @@ final class UserSearchViewController: UIViewController {
 
     static func instantiate() -> UserSearchViewController? {
         guard let view = instantiateFromStoryboard() as? UserSearchViewController else { return nil }
-        view.presenter = UserSearchPresenter(view: view)
+        view.presenter = UserSearchPresenter(view: view, repository: UserSearchRepository())
         return view
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = UserSearchPresenter(view: self)
         presenter.viewDidLoad()
     }
 

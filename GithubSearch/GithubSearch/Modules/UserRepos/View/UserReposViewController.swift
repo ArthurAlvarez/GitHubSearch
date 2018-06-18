@@ -22,7 +22,7 @@ final class UserReposViewController: UIViewController {
 
     static func instantiate(with username: String) -> UserReposViewController? {
         guard let view = instantiateFromStoryboard() as? UserReposViewController else { return nil }
-        view.presenter = UserReposPresenter(view: view, username: username)
+        view.presenter = UserReposPresenter(view: view, username: username, repository: UserReposRepository())
         view.title = "\(username)'s Repos"
         return view
     }

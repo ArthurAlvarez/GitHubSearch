@@ -14,9 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        guard let initialVC = UIStoryboard(name: "GithubSearch", bundle: nil).instantiateInitialViewController() else { return false }
+        guard let navigationController = UIStoryboard(name: "GithubSearch", bundle: nil).instantiateInitialViewController() as? UINavigationController, let initialVC = UserSearchViewController.instantiate() else { return false }
+
+        navigationController.viewControllers = [initialVC]
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = initialVC
+        window?.rootViewController = navigationController
         return true
     }
 }

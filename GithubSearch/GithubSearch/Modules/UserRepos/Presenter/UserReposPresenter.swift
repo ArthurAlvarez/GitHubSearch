@@ -13,15 +13,16 @@ class UserReposPresenter: NSObject {
 
     // MARK: - Properties
 
-    private let repository: UserReposRepository = UserReposRepository()
     private let username: String
     private let view: UserReposViewController!
+    private let repository: UserReposRepositoryProtocol!
 
     // MARK: - Init
 
-    init(view: UserReposViewController, username: String) {
+    init(view: UserReposViewController, username: String, repository: UserReposRepositoryProtocol) {
         self.view = view
         self.username = username
+        self.repository = repository
     }
 
     // MARK: - Lifecycle

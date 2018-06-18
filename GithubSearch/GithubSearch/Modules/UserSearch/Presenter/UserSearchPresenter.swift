@@ -13,10 +13,11 @@ final class UserSearchPresenter: NSObject {
 
     // MARK: - Properties
     private var view: UserSearchViewController!
-    private let repository = UserSearchRepository()
+    private var repository: UserSearchRepositoryProtocol!
 
-    init(view: UserSearchViewController) {
+    init(view: UserSearchViewController, repository: UserSearchRepositoryProtocol) {
         self.view = view
+        self.repository = repository
     }
 
     // MARK: - LifeCycle

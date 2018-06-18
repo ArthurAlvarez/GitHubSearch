@@ -9,7 +9,13 @@
 import Foundation
 import Moya
 
-final class UserSearchRepository {
+protocol UserSearchRepositoryProtocol {
+    func fetchUsers(query: String, onComplete: @escaping (Bool) -> Void)
+    func usersCount() -> Int
+    func getUserAt(index: Int) -> GithubUser
+}
+
+final class UserSearchRepository: UserSearchRepositoryProtocol {
 
     // MARK: - Properties
     private var provider = MoyaProvider<GithubAPI>()
