@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import NotificationBannerSwift
 
 extension UIViewController {
     static func instantiateFromStoryboard(storyboardName: String = "GithubSearch") -> UIViewController {
@@ -25,5 +26,9 @@ extension UIViewController {
 
     func pushViewController(_ viewController: UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    func showConnectionErrorBanner() {
+        NotificationBanner(title: "Falha ao carregar dados", subtitle: "Tente novamente", style: .danger).show()
     }
 }

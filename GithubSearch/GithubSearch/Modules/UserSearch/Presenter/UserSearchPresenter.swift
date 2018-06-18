@@ -48,7 +48,7 @@ final class UserSearchPresenter: NSObject {
             if success {
                 self.view.reloadData()
             } else {
-                NotificationBanner(title: "Falha ao carregar dados", subtitle: "Tente novamente", style: .danger).show()
+                self.view.showConnectionErrorBanner()
             }
         }
     }
