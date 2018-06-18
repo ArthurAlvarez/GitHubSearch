@@ -17,6 +17,8 @@
 		1444EFC820D7287300DC919E /* UserSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444EFC720D7287300DC919E /* UserSearchPresenter.swift */; };
 		1444EFD420D72D7F00DC919E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444EFD320D72D7F00DC919E /* UIViewControllerExtension.swift */; };
 		1444EFD620D72F8100DC919E /* GithubSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1444EFD520D72F8100DC919E /* GithubSearch.storyboard */; };
+		1444EFDA20D7337600DC919E /* GithubUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444EFD920D7337600DC919E /* GithubUserTableViewCell.swift */; };
+		1444EFDC20D73C5E00DC919E /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444EFDB20D73C5E00DC919E /* UITableViewCellExtension.swift */; };
 		A68D72F002A2AEEB7955E76F /* Pods_GithubSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79039E8CAD456FDFBA3B68B7 /* Pods_GithubSearch.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		1444EFC720D7287300DC919E /* UserSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchPresenter.swift; sourceTree = "<group>"; };
 		1444EFD320D72D7F00DC919E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		1444EFD520D72F8100DC919E /* GithubSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GithubSearch.storyboard; sourceTree = "<group>"; };
+		1444EFD920D7337600DC919E /* GithubUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserTableViewCell.swift; sourceTree = "<group>"; };
+		1444EFDB20D73C5E00DC919E /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		4DFB9BC25E5FF1711C5C7BD6 /* Pods-GithubSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubSearch/Pods-GithubSearch.release.xcconfig"; sourceTree = "<group>"; };
 		79039E8CAD456FDFBA3B68B7 /* Pods_GithubSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0AB98D5A178F0E18F3EA08F /* Pods-GithubSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubSearch/Pods-GithubSearch.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 		1444EFBA20D7250700DC919E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1444EFD720D7335800DC919E /* TableView */,
 				1444EFBE20D725CE00DC919E /* UserSearchViewController.swift */,
 			);
 			path = View;
@@ -186,8 +191,25 @@
 			isa = PBXGroup;
 			children = (
 				1444EFD320D72D7F00DC919E /* UIViewControllerExtension.swift */,
+				1444EFDB20D73C5E00DC919E /* UITableViewCellExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1444EFD720D7335800DC919E /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				1444EFD820D7335F00DC919E /* Cells */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		1444EFD820D7335F00DC919E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1444EFD920D7337600DC919E /* GithubUserTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		2BBEF339B9882273CF91E0F8 /* Pods */ = {
@@ -302,14 +324,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GithubSearch/Pods-GithubSearch-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -326,8 +358,10 @@
 				1413EC4F20D71DD900C9FCA9 /* AppDelegate.swift in Sources */,
 				1444EFC820D7287300DC919E /* UserSearchPresenter.swift in Sources */,
 				1444EFBF20D725CE00DC919E /* UserSearchViewController.swift in Sources */,
+				1444EFDC20D73C5E00DC919E /* UITableViewCellExtension.swift in Sources */,
 				1444EFC120D7261700DC919E /* UserSearchRepository.swift in Sources */,
 				1444EFC320D7266600DC919E /* GithubUser.swift in Sources */,
+				1444EFDA20D7337600DC919E /* GithubUserTableViewCell.swift in Sources */,
 				1444EFD420D72D7F00DC919E /* UIViewControllerExtension.swift in Sources */,
 				1444EFB820D720C200DC919E /* GithubAPI.swift in Sources */,
 			);

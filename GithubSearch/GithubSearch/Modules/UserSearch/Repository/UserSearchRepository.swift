@@ -21,8 +21,13 @@ final class UserSearchRepository {
         provider.request(GithubAPI.searchUser(query: query)) { result in
             switch result {
             case .success(let response):
-                self.users = (try? JSONDecoder().decode([GithubUser].self, from: response.data)) ?? []
-                onComplete(true)
+                if let responseWrapper = (try? JSONDecoder().decode(GithubUserResponseWrapper.self,
+                                                                    from: response.data)) {
+                    self.users = responseWrapper.items
+                    onComplete(true)
+                } else {
+                    onComplete(false)
+                }
             default:
                 onComplete(false)
             }

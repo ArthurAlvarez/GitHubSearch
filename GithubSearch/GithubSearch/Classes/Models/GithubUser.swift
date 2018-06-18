@@ -11,5 +11,9 @@ import Foundation
 struct GithubUser: Codable {
     let login: String!
     let avatar_url: String!
-    let score: Double!
+    let html_url: String!
+}
+
+struct GithubUserResponseWrapper: Codable {
+    let items: [GithubUser]!
 }

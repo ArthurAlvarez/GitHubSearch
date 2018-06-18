@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 extension UIViewController {
     static func instantiateFromStoryboard(storyboardName: String = "GithubSearch") -> UIViewController {
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: String(describing: self))
+    }
+
+    func showLoading() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+
+    func hideLoading() {
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
 }
