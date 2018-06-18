@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserSearchViewController: UIViewController {
+final class UserSearchViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak private var searchBar: UISearchBar!
@@ -21,7 +21,9 @@ class UserSearchViewController: UIViewController {
     // MARK: - Methods
 
     static func instantiate() -> UserSearchViewController? {
-        return instantiateFromStoryboard() as? UserSearchViewController
+        guard let view = instantiateFromStoryboard() as? UserSearchViewController else { return nil }
+        view.presenter = UserSearchPresenter(view: view)
+        return view
     }
 
     override func viewDidLoad() {

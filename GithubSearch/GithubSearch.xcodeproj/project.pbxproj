@@ -19,6 +19,11 @@
 		1444EFD620D72F8100DC919E /* GithubSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1444EFD520D72F8100DC919E /* GithubSearch.storyboard */; };
 		1444EFDA20D7337600DC919E /* GithubUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444EFD920D7337600DC919E /* GithubUserTableViewCell.swift */; };
 		1444EFDC20D73C5E00DC919E /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444EFDB20D73C5E00DC919E /* UITableViewCellExtension.swift */; };
+		1444EFE220D7433400DC919E /* UserReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444EFE120D7433400DC919E /* UserReposViewController.swift */; };
+		1444EFE620D7456F00DC919E /* GithubRepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444EFE520D7456F00DC919E /* GithubRepoTableViewCell.swift */; };
+		1444EFE820D745F400DC919E /* UserReposPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444EFE720D745F400DC919E /* UserReposPresenter.swift */; };
+		1444EFEA20D7460C00DC919E /* UserReposRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444EFE920D7460C00DC919E /* UserReposRepository.swift */; };
+		1444EFEC20D7497A00DC919E /* GithubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444EFEB20D7497A00DC919E /* GithubRepo.swift */; };
 		A68D72F002A2AEEB7955E76F /* Pods_GithubSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79039E8CAD456FDFBA3B68B7 /* Pods_GithubSearch.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +42,11 @@
 		1444EFD520D72F8100DC919E /* GithubSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GithubSearch.storyboard; sourceTree = "<group>"; };
 		1444EFD920D7337600DC919E /* GithubUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserTableViewCell.swift; sourceTree = "<group>"; };
 		1444EFDB20D73C5E00DC919E /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
+		1444EFE120D7433400DC919E /* UserReposViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReposViewController.swift; sourceTree = "<group>"; };
+		1444EFE520D7456F00DC919E /* GithubRepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoTableViewCell.swift; sourceTree = "<group>"; };
+		1444EFE720D745F400DC919E /* UserReposPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReposPresenter.swift; sourceTree = "<group>"; };
+		1444EFE920D7460C00DC919E /* UserReposRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReposRepository.swift; sourceTree = "<group>"; };
+		1444EFEB20D7497A00DC919E /* GithubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepo.swift; sourceTree = "<group>"; };
 		4DFB9BC25E5FF1711C5C7BD6 /* Pods-GithubSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubSearch/Pods-GithubSearch.release.xcconfig"; sourceTree = "<group>"; };
 		79039E8CAD456FDFBA3B68B7 /* Pods_GithubSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0AB98D5A178F0E18F3EA08F /* Pods-GithubSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubSearch/Pods-GithubSearch.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				1444EFB920D724EC00DC919E /* UserSearch */,
+				1444EFDD20D742DC00DC919E /* UserRepos */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -167,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				1444EFC220D7266600DC919E /* GithubUser.swift */,
+				1444EFEB20D7497A00DC919E /* GithubRepo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,6 +220,57 @@
 			isa = PBXGroup;
 			children = (
 				1444EFD920D7337600DC919E /* GithubUserTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1444EFDD20D742DC00DC919E /* UserRepos */ = {
+			isa = PBXGroup;
+			children = (
+				1444EFDE20D742E700DC919E /* Presenter */,
+				1444EFDF20D742EC00DC919E /* View */,
+				1444EFE020D742F300DC919E /* Repository */,
+			);
+			path = UserRepos;
+			sourceTree = "<group>";
+		};
+		1444EFDE20D742E700DC919E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1444EFE720D745F400DC919E /* UserReposPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1444EFDF20D742EC00DC919E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1444EFE320D7455A00DC919E /* TableView */,
+				1444EFE120D7433400DC919E /* UserReposViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1444EFE020D742F300DC919E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				1444EFE920D7460C00DC919E /* UserReposRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		1444EFE320D7455A00DC919E /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				1444EFE420D7455E00DC919E /* Cells */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		1444EFE420D7455E00DC919E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1444EFE520D7456F00DC919E /* GithubRepoTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -357,11 +420,16 @@
 			files = (
 				1413EC4F20D71DD900C9FCA9 /* AppDelegate.swift in Sources */,
 				1444EFC820D7287300DC919E /* UserSearchPresenter.swift in Sources */,
+				1444EFE620D7456F00DC919E /* GithubRepoTableViewCell.swift in Sources */,
 				1444EFBF20D725CE00DC919E /* UserSearchViewController.swift in Sources */,
 				1444EFDC20D73C5E00DC919E /* UITableViewCellExtension.swift in Sources */,
 				1444EFC120D7261700DC919E /* UserSearchRepository.swift in Sources */,
+				1444EFEC20D7497A00DC919E /* GithubRepo.swift in Sources */,
 				1444EFC320D7266600DC919E /* GithubUser.swift in Sources */,
+				1444EFE820D745F400DC919E /* UserReposPresenter.swift in Sources */,
+				1444EFEA20D7460C00DC919E /* UserReposRepository.swift in Sources */,
 				1444EFDA20D7337600DC919E /* GithubUserTableViewCell.swift in Sources */,
+				1444EFE220D7433400DC919E /* UserReposViewController.swift in Sources */,
 				1444EFD420D72D7F00DC919E /* UIViewControllerExtension.swift in Sources */,
 				1444EFB820D720C200DC919E /* GithubAPI.swift in Sources */,
 			);

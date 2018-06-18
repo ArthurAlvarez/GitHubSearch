@@ -13,9 +13,9 @@ class GithubUserTableViewCell: UITableViewCell {
 
     // MARK: - Properties
 
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var urlLabel: UILabel!
+    @IBOutlet weak private var avatarImageView: UIImageView!
+    @IBOutlet weak private var usernameLabel: UILabel!
+    @IBOutlet weak private var urlLabel: UILabel!
 
     // MARK: - Methods
 

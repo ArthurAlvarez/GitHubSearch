@@ -9,11 +9,11 @@
 import UIKit
 import NotificationBannerSwift
 
-class UserSearchPresenter: NSObject {
+final class UserSearchPresenter: NSObject {
 
     // MARK: - Properties
-    var view: UserSearchViewController!
-    let repository = UserSearchRepository()
+    private var view: UserSearchViewController!
+    private let repository = UserSearchRepository()
 
     init(view: UserSearchViewController) {
         self.view = view
@@ -54,7 +54,8 @@ class UserSearchPresenter: NSObject {
     }
 
     func userTapped(at index: Int) {
-        print("Tapped user at: \(index)")
-        // TODO: show user repos
+        guard let username = repository.getUserAt(index: index).login,
+            let reposVC = UserReposViewController.instantiate(with: username) else { return }
+        view.pushViewController(reposVC)
     }
 }

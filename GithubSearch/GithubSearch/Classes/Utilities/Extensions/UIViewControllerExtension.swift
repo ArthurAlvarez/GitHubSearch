@@ -22,4 +22,8 @@ extension UIViewController {
     func hideLoading() {
         MBProgressHUD.hide(for: self.view, animated: true)
     }
+
+    func pushViewController(_ viewController: UIViewController) {
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
