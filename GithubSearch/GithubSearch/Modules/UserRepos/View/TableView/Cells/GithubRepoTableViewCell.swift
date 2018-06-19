@@ -21,9 +21,13 @@ final class GithubRepoTableViewCell: UITableViewCell {
 
     func setContent(with repo: GithubRepo) {
         nameLabel.text = repo.name
-
         languageLabel.text = "Language: \(repo.language ?? "-")"
         watchersLabel.text = "Watchers: \(repo.watchers ?? 0)"
         forksLabel.text = "Forks: \(repo.forks ?? 0)"
+
+        nameLabel.accessibilityIdentifier = "nameLabel"
+        languageLabel.accessibilityIdentifier = "languageLabel"
+        watchersLabel.accessibilityIdentifier = "watchersLabel"
+        forksLabel.accessibilityIdentifier = "forksLabel"
     }
 }

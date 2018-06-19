@@ -29,5 +29,8 @@ class GithubUserTableViewCell: UITableViewCell {
         avatarImageView.kf.setImage(with: URL(string: user.avatar_url), placeholder: nil)
         usernameLabel.text = user.login
         urlLabel.text = user.html_url
+
+        usernameLabel.accessibilityIdentifier = "UsernameLabel"
+        urlLabel.accessibilityIdentifier = "urlLabel"
     }
 }
